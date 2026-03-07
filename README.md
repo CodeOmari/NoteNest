@@ -27,7 +27,7 @@ The following languages are used in this project: HTML, JavaScript(React), CSS a
 8. Change directory to the backend folder: `cd notes_app`
 9. Install project requirements from the requirements.txt file: `pip install -r requirements.txt`
 10. Run the backend of the project: `python manage.py runserver`
-11. Open a new terminal and navigate to the frontend directory: `cd ango_react`, `cd frontend`
+11. Open a new terminal and navigate to the frontend directory: `cd django_react`, `cd frontend`
 12. Run frontend of the project: `npm run dev`
 
 
