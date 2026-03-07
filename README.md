@@ -8,7 +8,7 @@ This project contains the following features: User registration and login, Notes
 The following languages are used in this project: HTML, JavaScript(React), CSS and Python(Django Rest Framework).
 
 # Project Screenshots
-![Login page screenshoot](src/assets/login-page.png)
+![Login page screenshoot](frontend/src/assets/login-page.png)
 
 ![Registration page screenshoot](src/assets/register-page.png)
 
