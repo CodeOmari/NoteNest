@@ -48,24 +48,32 @@ function Home() {
 
     return (
         <div>
-            <div>
-                <h2>Notes</h2>
-                {notes.map((note) => (
-                    <Note note={note} onDelete={deleteNote} key={note.id} />
-                ))}
+            <div className="header">
+                <div className="title-container">
+                    <h2 className="title">NoteNest</h2>
+                </div>
+
+                <div className="btn">
+                    <button className="logout">
+                        <a href="/logout">Log out</a>
+                    </button>
+                </div>
             </div>
-            <h2>Create a Note</h2>
-            <form onSubmit={createNote}>
+            <h2 className="note-header">Create a Note</h2>
+            <form className="note-form" onSubmit={createNote}>
                 <label htmlFor="title">Title:</label>
                 <br />
                 <input
                     type="text"
+                    className="title-input"
                     id="title"
                     name="title"
                     required
                     onChange={(e) => setTitle(e.target.value)}
                     value={title}
+                    placeholder="Enter note title..."
                 />
+                <br />
                 <label htmlFor="content">Content:</label>
                 <br />
                 <textarea
@@ -74,14 +82,16 @@ function Home() {
                     required
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
+                    placeholder="Write your note here..."
                 ></textarea>
                 <br />
-                <input type="submit" value="Submit"></input>
+                <input type="submit" value="Submit" className="btn-submit"></input>
             </form>
-            <div className="btn">
-                <button>
-                    <a href="/logout">Log out</a>
-                </button>
+
+            <div className="note-created">
+                {notes.map((note) => (
+                    <Note note={note} onDelete={deleteNote} key={note.id} />
+                ))}
             </div>
         </div>
     );
