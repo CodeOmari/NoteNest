@@ -10,11 +10,11 @@ The following languages are used in this project: HTML, JavaScript(React), CSS a
 # Project Screenshots
 ![Login page screenshoot](frontend/src/assets/login-page.png)
 
-![Registration page screenshoot](src/assets/register-page.png)
+![Registration page screenshoot](frontend/src/assets/register-page.png)
 
-![Notes creation page screenshoot](src/assets/create-notes-page.png)
+![Notes creation page screenshoot](frontend/src/assets/create-notes-page.png)
 
-![Notes list screenshoot](src/assets/notes-lisr.png)
+![Notes list screenshoot](frontend/src/assets/notes-lisr.png)
 
 # Project Setup (Windows users)
 1. Clone the project: `git clone https://github.com/CodeOmari/NoteNest.git`
