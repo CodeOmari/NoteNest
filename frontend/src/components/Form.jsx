@@ -39,7 +39,7 @@ function Form({ route, method }) {
         <form onSubmit={handleSubmit} className="form-container">
             <div className="title">
                 <h3>NoteNest</h3>
-                <img src="../src/assets/NoteNest.png" alt="icon" />
+                <img src="../src/assets/NoteNest.png" alt="app logo" />
             </div>
             <input
                 className="form-input"
