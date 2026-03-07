@@ -5,7 +5,7 @@
     font-family: "Lato", serif;
 }
 body{
-  background-color: #007bff;
+  background-color: #e4e4e4;
 }
 .title{
   display: flex;
@@ -44,6 +44,10 @@ form {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  outline: none;
+}
+.form-input:focus{
+  border: 1px solid #0080FF;
 }
 
 .form-button {
@@ -63,7 +67,7 @@ form {
 }
 .register-link{
   text-decoration: none;
-  color: #000;
+  color: #0080FF;
   font-size: 15px;
   font-weight: 500;
 }
