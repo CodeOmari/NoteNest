@@ -2,7 +2,7 @@
 A simple notes app built with Django Rest Framework and React
 
 # Features
-This project contains the following features: User registration and login, Notes creation form, Notes list, and Note' deletion section.
+This project contains the following features: User registration and login, Notes creation form, Notes list, and Note deletion section.
 
 # Tech Stack
 The following languages are used in this project: HTML, JavaScript(React), CSS and Python(Django Rest Framework).
