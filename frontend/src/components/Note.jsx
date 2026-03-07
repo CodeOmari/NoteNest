@@ -10,7 +10,7 @@ function Note({ note, onDelete }) {
             <p className="note-content">{note.content}</p>
             <p className="note-date">{formattedDate}</p>
             <button className="delete-button" onClick={() => onDelete(note.id)}>
-                Delete
+                <img src="../src/assets/cancel-icon.svg" alt="cancel icon" />
             </button>
         </div>
     );
