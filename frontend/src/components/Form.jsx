@@ -5,7 +5,8 @@ import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
 import "../styles/Form.css"
 import LoadingIndicator from "./LoadingIndicator";
 
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import Logo from "../assets/NoteNest.png";
 
 function Form({ route, method }) {
     const [username, setUsername] = useState("");
@@ -39,7 +40,7 @@ function Form({ route, method }) {
         <form onSubmit={handleSubmit} className="form-container">
             <div className="title">
                 <h3>NoteNest</h3>
-                <img src="../src/assets/NoteNest.png" alt="app logo" />
+                <img src={Logo} alt="app logo" />
             </div>
             <input
                 className="form-input"
