@@ -21,14 +21,14 @@
     font-size: 21px;
     font-weight: 500;
 }
-.btn{
+.logout-btn{
     margin-right: 40px;
-    cursor: pointer;
 }
 .logout{
     border: none;
     background-color: #fff;
     padding: 8px;
+    cursor: pointer;
 }
 .logout:hover{
     background-color: #0080FF;
