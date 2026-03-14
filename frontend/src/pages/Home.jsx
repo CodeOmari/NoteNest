@@ -8,6 +8,12 @@ function Home() {
     const [content, setContent] = useState("");
     const [title, setTitle] = useState("");
 
+    const handleLogout = () => {
+    localStorage.removeItem(ACCESS_TOKEN);
+    localStorage.clear();
+    navigate("/login");
+    }
+
     useEffect(() => {
         getNotes();
     }, []);
@@ -54,8 +60,8 @@ function Home() {
                 </div>
 
                 <div className="btn">
-                    <button className="logout">
-                        <a href="/logout">Log out</a>
+                    <button className="logout" onClick={handleLogout}>
+                        Log out
                     </button>
                 </div>
             </div>
