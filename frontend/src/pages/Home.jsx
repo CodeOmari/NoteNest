@@ -3,13 +3,16 @@ import api from "../api";
 import Note from "../components/Note"
 import "../styles/Home.css"
 
+import { useNavigate } from "react-router-dom";
+
 function Home() {
     const [notes, setNotes] = useState([]);
     const [content, setContent] = useState("");
     const [title, setTitle] = useState("");
 
+    const navigate = useNavigate();
+
     const handleLogout = () => {
-    localStorage.removeItem(ACCESS_TOKEN);
     localStorage.clear();
     navigate("/login");
     }
@@ -59,7 +62,7 @@ function Home() {
                     <h2 className="title">NoteNest</h2>
                 </div>
 
-                <div className="btn">
+                <div className="logout-btn">
                     <button className="logout" onClick={handleLogout}>
                         Log out
                     </button>
