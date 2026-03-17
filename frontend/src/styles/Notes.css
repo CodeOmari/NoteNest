@@ -8,26 +8,19 @@
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-
 .note-title {
   color: #000;
   font-size: 16px;
   font-weight: 500;
 }
-
 .note-content {
   color: #666;
 }
-
 .note-date {
   color: #999;
   font-size: 0.8rem;
 }
-
 .delete-button {
-  position: sticky;
-  bottom: 76%;
-  left: 43%;
   color: white;
   border: none;
   padding: 5px;
@@ -35,7 +28,6 @@
   cursor: pointer;
   transition: background-color 0.3s;
 }
-
 .delete-button:hover {
   background-color: #0080FF;
 }
