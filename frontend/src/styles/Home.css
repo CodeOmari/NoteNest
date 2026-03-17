@@ -78,6 +78,5 @@ textarea:focus, .title-input:focus{
 }
 .note-created{
     max-width: 500px;
-    background-color: #fff;
     border-radius: 5px;
 }
