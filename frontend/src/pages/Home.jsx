@@ -57,7 +57,7 @@ function Home() {
 
     return (
         <div className="container-fluid">
-            <div className="header">
+            <div className="header d-flex justify-content-between align-items-center">
                 <div className="title-container">
                     <h2 className="title">NoteNest</h2>
                 </div>

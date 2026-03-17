@@ -8,10 +8,6 @@
     background-color: #fff;
     padding-top: 20px;
     padding-bottom: 15px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
 }
 .title-container{
     margin-left: -90px;
