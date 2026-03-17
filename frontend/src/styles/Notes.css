@@ -5,7 +5,6 @@
     font-family: "Inter", sans-serif;
 }
 .note-container {
-  margin: 20px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
   max-width: 600px;
