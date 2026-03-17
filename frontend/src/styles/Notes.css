@@ -21,6 +21,9 @@
   font-size: 0.8rem;
 }
 .delete-button {
+  position: fixed;
+  bottom: 75%;
+  left: 40%;
   color: white;
   border: none;
   padding: 5px;
