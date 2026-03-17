@@ -7,6 +7,8 @@
 .note-container {
   border: 1px solid #ccc;
   border-radius: 5px;
+  position: relative;
+  background-color: #fff;
 }
 .note-title {
   color: #000;
@@ -21,9 +23,9 @@
   font-size: 0.8rem;
 }
 .delete-button {
-  position: fixed;
-  bottom: 21%;
-  left: 64.5%;
+  position: absolute;
+  bottom: 72%;
+  left: 92%;
   color: white;
   border: none;
   padding: 5px;
