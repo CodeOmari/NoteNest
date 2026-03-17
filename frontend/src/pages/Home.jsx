@@ -69,7 +69,7 @@ function Home() {
                 </div>
             </div>
             <h2 className="note-header">Create a Note</h2>
-            <form className="container note-form px-1" onSubmit={createNote}>
+            <form className="container note-form p-2 mx-2" onSubmit={createNote}>
                 <label htmlFor="title">Title:</label>
                 <br />
                 <input
