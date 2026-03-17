@@ -77,8 +77,7 @@ textarea:focus, .title-input:focus{
     background-color: #2182dd;
 }
 .note-created{
-    width: 600px;
+    max-width: 600px;
     background-color: #fff;
-    margin-left: 20px;
     border-radius: 5px;
 }

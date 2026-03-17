@@ -97,7 +97,7 @@ function Home() {
                 <input type="submit" value="Submit" className="btn-submit"></input>
             </form>
 
-            <div className="note-created">
+            <div className="container note-created">
                 {notes.map((note) => (
                     <Note note={note} onDelete={deleteNote} key={note.id} />
                 ))}
