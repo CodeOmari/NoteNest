@@ -56,7 +56,7 @@ function Home() {
     };
 
     return (
-        <div>
+        <div className="container-fluid">
             <div className="header">
                 <div className="title-container">
                     <h2 className="title">NoteNest</h2>
