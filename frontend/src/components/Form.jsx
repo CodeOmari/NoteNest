@@ -6,6 +6,8 @@ import "../styles/Form.css"
 import LoadingIndicator from "./LoadingIndicator";
 import Logo from '../assets/notenest.png';
 
+import Swal from "sweetalert2";
+
 import { Link } from "react-router-dom";
 
 function Form({ route, method }) {
@@ -27,13 +29,20 @@ function Form({ route, method }) {
 
         if (method === 'register') {
            if (password1 !== password2) {
-            alert("Passwords do not match");
+                Swal.fire({ 
+                    icon: "error", 
+                    title: "Passwords do not match", 
+                    text: "Please make sure both passwords are the same.", 
+                });
             return;
            }
 
            if (!passwordRegex.test(password1)) {
-             alert("Password must be at least 8 characters long and include at least one special character");
-             return;
+             Swal.fire({ 
+                icon: "warning", 
+                title: "Weak Password", 
+                text: "Password must be at least 8 characters long and include at least one special character.", 
+            });
            }
     }
 
@@ -63,20 +72,37 @@ function Form({ route, method }) {
             localStorage.setItem(REFRESH_TOKEN, res.data.refresh);
             navigate("/notes");
         } else {
-            alert("Account created successfully! Please log in.");
+                await Swal.fire({ 
+                    icon: "success", 
+                    title: "Account Created!", 
+                    text: "Your account was created successfully. Please log in.", 
+                    confirmButtonText: "Go to Login", 
+                });
             navigate("/login");
         }
         } catch (error) {
             if (method === "login") {
-                alert("Incorrect username or password");
+                Swal.fire({ 
+                    icon: "error", 
+                    title: "Login Failed", 
+                    text: "Incorrect username or password.", 
+                });
             } else {
                 if (error.response && error.response.data) {
                 const data = error.response.data;
 
                 const messages = Object.values(data).flat().join("\n");
-                    alert(messages);
+                    Swal.fire({ 
+                        icon: "error", 
+                        title: "Registration Failed", 
+                        text: messages, 
+                    });
                 } else {
-                    alert("Registration failed. Try again.");
+                    Swal.fire({ 
+                        icon: "error", 
+                        title: "Registration Failed", 
+                        text: "Something went wrong. Please try again.", 
+                    });
                 }
             }
         } finally {
