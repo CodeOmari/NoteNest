@@ -5,6 +5,7 @@ import '../styles/Notes.css';
 import api from "../api";
 import { useEffect, useState } from "react";
 import {Search, Plus, StickyNote, Pencil, Trash2} from "lucide-react";
+import Swal from "sweetalert2";
 
 const formatDate = (dateString) => {
     if (!dateString) return "";
@@ -46,8 +47,14 @@ export default function Notes() {
     });
 
     const addNote = async () => {
-        if (!formData.title || !formData.content) return;
-
+        if (!formData.title || !formData.content) {
+            Swal.fire({ 
+                icon: "warning", 
+                title: "Empty fields", 
+                text: "Please enter both a title and some content.", 
+            });
+            return;
+        }
         try {
             await api.post("/notenest/notes/", formData);
 
@@ -55,8 +62,24 @@ export default function Notes() {
 
             setFormData({ title: "", content: "" });
             setShowForm(false);
+
+            Swal.fire({ 
+                icon: "success", 
+                title: "Note Created!", 
+                text: "Your note has been saved successfully.", 
+                timer: 2000, 
+                showConfirmButton: false, 
+            });
         } catch (error) {
             console.log(error);
+
+            Swal.fire({ 
+                icon: "success", 
+                title: "Note Created!", 
+                text: "Your note has been saved successfully.", 
+                timer: 2000, 
+                showConfirmButton: false, 
+            });
         }
     };
 
@@ -86,7 +109,14 @@ export default function Notes() {
     };
 
     const updateNote = async () => {
-        if (!formData.title || !formData.content) return;
+        if (!formData.title || !formData.content) {
+            Swal.fire({ 
+                icon: "warning", 
+                title: "Empty fields", 
+                text: "Please enter both a title and some content.", 
+            });
+            return;
+        }
 
         try {
             await api.put(`/notenest/notes/update/${editingId}/`, formData);
@@ -96,19 +126,61 @@ export default function Notes() {
             setFormData({ title: "", content: "" });
             setEditingId(null);
             setShowForm(false);
+
+            Swal.fire({ 
+                icon: "success", 
+                title: "Note Updated!", 
+                text: "Your changes have been saved successfully.", 
+                timer: 2000, 
+                showConfirmButton: false, 
+            });
         } catch (error) {
             console.log(error);
+
+            Swal.fire({ 
+                icon: "error", 
+                title: "Failed to Update Note", 
+                text: "Something went wrong. Please try again.", 
+            });
         }
     };
 
 
     const deleteNote = async (id) => {
+        const result = await Swal.fire({ 
+            title: "Delete this note?", 
+            text: "This action cannot be undone.", 
+            icon: "warning", 
+            showCancelButton: true, 
+            confirmButtonText: "Yes, delete it", 
+            cancelButtonText: "Cancel", 
+            reverseButtons: true, 
+        });
+
+        if (!result.isConfirmed) { 
+            return; 
+        }
+
         try {
             await api.delete(`/notenest/notes/delete/${id}/`);
 
             await fetchNotes();
+
+            Swal.fire({ 
+                icon: "success", 
+                title: "Note Deleted!", 
+                text: "The note has been deleted successfully.", 
+                timer: 2000, 
+                showConfirmButton: false, 
+            });
         } catch (error) {
             console.log(error);
+
+            Swal.fire({ 
+                icon: "error", 
+                title: "Failed to Delete Note", 
+                text: "Something went wrong. Please try again.", 
+            });
         }
     };
 
