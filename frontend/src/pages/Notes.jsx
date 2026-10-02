@@ -267,7 +267,7 @@ export default function Notes() {
                         {filteredNotes.map((note) => (
                             <div className="col-12 col-sm-12">
                                 <div className="notes-written mt-4 rounded p-2">
-                                    <div className="d-flex">
+                                    <div className="d-flex justify-content-between">
                                         <div className="content-section">
                                             <h2>{note.title}</h2>
 
