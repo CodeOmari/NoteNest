@@ -4,8 +4,11 @@ import { Link } from "react-router-dom";
 import '../styles/Notes.css';
 import api from "../api";
 import { useEffect, useState } from "react";
-import {Search, Plus, StickyNote, Pencil, Trash2} from "lucide-react";
+import {Search, Plus, Pencil, Trash2} from "lucide-react";
 import Swal from "sweetalert2";
+
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 const formatDate = (dateString) => {
     if (!dateString) return "";
@@ -262,16 +265,17 @@ export default function Notes() {
                 <div className="container">
                     <div className="row">
                         {filteredNotes.map((note) => (
-                            <div className="col-12 col-sm-4">
+                            <div className="col-12 col-sm-12">
                                 <div className="notes-written mt-4 rounded p-2">
                                     <div className="d-flex">
                                         <div className="content-section">
                                             <h2>{note.title}</h2>
 
-                                            <p>
-                                                {note.content}
-                                            </p>
-
+                                            <div className="note-details">
+                                                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                                    {note.content}
+                                                </ReactMarkdown>
+                                            </div>
                                         </div>
 
                                         <div className="features d-flex align-items-start">
