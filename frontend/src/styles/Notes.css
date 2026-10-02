@@ -103,10 +103,11 @@
     color: #000;
     font-weight: 500;
 }
-.content-section p{
+.note-details{
     color: #666;
     font-family: "Inter", sans-serif;
     font-size: 0.8rem;
+    white-space: pre-line;
 }
 .note-date{
     color: #666;
