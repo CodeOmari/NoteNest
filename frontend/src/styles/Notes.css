@@ -114,3 +114,71 @@
     font-family: "Inter", sans-serif;
     font-size: 0.7rem;
 }
+
+
+
+
+
+/* Reduce unnecessary spacing inside rendered Markdown notes */
+.note-details {
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+/* Remove large gaps between paragraphs */
+.note-details p {
+    margin-top: 0;
+    margin-bottom: 0.35rem;
+}
+
+/* Reduce spacing around headings */
+.note-details h1,
+.note-details h2,
+.note-details h3,
+.note-details h4,
+.note-details h5,
+.note-details h6 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.35rem;
+    line-height: 1.3;
+}
+
+/* Reduce spacing around numbered and bulleted lists */
+.note-details ul,
+.note-details ol {
+    margin-top: 0.2rem;
+    margin-bottom: 0.4rem;
+    padding-left: 1.5rem;
+}
+
+/* Keep list items close together */
+.note-details li {
+    margin-top: 0;
+    margin-bottom: 0.15rem;
+    line-height: 1.4;
+}
+
+/* Prevent nested paragraphs from creating extra gaps in lists */
+.note-details li p {
+    margin-top: 0;
+    margin-bottom: 0.15rem;
+}
+
+/* Reduce spacing between nested lists */
+.note-details li ul,
+.note-details li ol {
+    margin-top: 0.15rem;
+    margin-bottom: 0.15rem;
+}
+
+/* Tidy up code blocks and blockquotes */
+.note-details pre,
+.note-details blockquote {
+    margin-top: 0.35rem;
+    margin-bottom: 0.35rem;
+}
+
+/* Remove excess space around horizontal rules */
+.note-details hr {
+    margin: 0.5rem 0;
+}
