@@ -161,7 +161,17 @@ function Form({ route, method }) {
                     </button>
                     
                     {
-                        method === 'login' && ( <Link to="/register" className="register-link d-flex align-items-center justify-content-center">Need an account? Sign up now.</Link> )
+                        method === 'login' && ( 
+                            <div>
+                                <Link to="/forgot-password" className="forgot-password-link d-flex align-items-center justify-content-center">
+                                    Forgot Password?
+                                </Link>
+
+                                <Link to="/register" className="register-link d-flex align-items-center justify-content-center">
+                                    Need an account? Sign up now.
+                                </Link>
+                            </div>
+                        )
                     }
                 </div>
             </form>
