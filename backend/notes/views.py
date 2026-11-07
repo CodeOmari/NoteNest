@@ -13,6 +13,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 from django.core.mail import send_mail
+import html
 from django.utils.html import strip_tags
 from django.db.models import Q
 
@@ -157,12 +158,19 @@ def process_note_reminders(request):
                 failed_count += 1
                 continue
 
+            note_content = html.unescape(
+                strip_tags(note.content)
+            )
+
+            login_url = "https://note-nest-bird.vercel.app/login"
+
             email_body = (
                 f"Hello {note.author.username},\n\n"
                 f"This is a reminder about your note:\n\n"
                 f"{note.title}\n\n"
-                f"{strip_tags(note.content)}\n\n"
-                "Open NoteNest to view your note."
+                f"{note_content}\n\n"
+                "Open NoteNest to view your note.\n\n"
+                f"Click here to log in: {login_url}"
             )
 
             result = send_mail(
