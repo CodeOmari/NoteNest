@@ -167,8 +167,8 @@ def process_note_reminders(request):
             email_body = (
                 f"Hello {note.author.username},\n\n"
                 f"This is a reminder about your note:\n\n"
-                f"{note.title}\n\n"
-                f"{note_content}\n\n"
+                f"Title: {note.title}\n\n"
+                f"Content: {note_content}\n\n"
                 "Open NoteNest to view your note.\n\n"
                 f"Click here to log in: {login_url}"
             )
