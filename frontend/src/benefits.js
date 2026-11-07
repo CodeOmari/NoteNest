@@ -19,7 +19,7 @@ export default [
             src: Notifications,
             alt: 'ringing bell icon'
         },
-        title: 'Email reminders(Coming soon)',
+        title: 'Email reminders(Now Available)',
         description: 'Pick a date and time — your note arrives in your inbox.'
     },
     {
